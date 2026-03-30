@@ -26,46 +26,72 @@ src="https://www.facebook.com/tr?id=1336919241607318&ev=PageView&noscript=1"
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
     background: #000;
+    font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
-/* Main Box */
+/* Animated Border */
 .container {
-    width: 90%;
-    max-width: 400px;
+    position: relative;
+    width: 85%;
+    max-width: 320px;
+    padding: 20px;
+    border-radius: 20px;
     background: #000;
-    border-radius: 25px;
-    padding: 25px;
     text-align: center;
-    box-shadow: 0 0 25px yellow;
+    z-index: 1;
+}
+
+/* Glowing animated border */
+.container::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: 20px;
+    background: linear-gradient(45deg, yellow, orange, yellow);
+    z-index: -1;
+    animation: borderMove 3s linear infinite;
+}
+
+.container::after {
+    content: "";
+    position: absolute;
+    inset: 2px;
+    background: #000;
+    border-radius: 20px;
+    z-index: -1;
+}
+
+@keyframes borderMove {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
 }
 
 /* Heading */
 h1 {
     color: #00c3ff;
-    font-size: 22px;
-    margin-bottom: 20px;
+    font-size: 18px;
+    margin-bottom: 15px;
 }
 
 /* Logo */
 .logo {
-    width: 180px;
-    height: 180px;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
-    box-shadow: 0 0 20px yellow;
-    margin-bottom: 20px;
+    box-shadow: 0 0 15px yellow;
+    margin-bottom: 15px;
 }
 
 /* Text */
 .text {
     color: #00c3ff;
-    font-size: 16px;
-    margin-bottom: 25px;
+    font-size: 14px;
+    margin-bottom: 20px;
 }
 
 /* Button */
@@ -73,40 +99,40 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 8px;
     background: #1e88e5;
     color: #fff;
     text-decoration: none;
-    padding: 15px;
-    border-radius: 10px;
-    font-size: 18px;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
     font-weight: bold;
     animation: zoom 1.5s infinite;
 }
 
-/* Button Logo */
+/* Telegram icon */
 .btn img {
-    width: 25px;
+    width: 22px;
 }
 
 /* Zoom Animation */
 @keyframes zoom {
     0% { transform: scale(1); }
-    50% { transform: scale(1.08); }
+    50% { transform: scale(1.07); }
     100% { transform: scale(1); }
 }
 
-/* Footer Text */
+/* Footer */
 .footer {
     color: #ccc;
-    font-size: 13px;
-    margin-top: 20px;
+    font-size: 12px;
+    margin-top: 15px;
 }
 
 .disclaimer {
-    color: #aaa;
-    font-size: 11px;
-    margin-top: 15px;
+    color: #888;
+    font-size: 10px;
+    margin-top: 10px;
 }
 </style>
 
@@ -121,20 +147,20 @@ h1 {
     <img class="logo" src="https://raw.githubusercontent.com/dillubhai90/Dillu-Bhai-Matka-2/main/IMG_20260330_072855_195.jpg">
 
     <div class="text">
-        हम हर रोज फ्री गेम पास करवा रहे हैं – हजारों लोग पहले से जुड़ चुके हैं, अब आपकी बारी है।
+        हम हर रोज फ्री गेम पास करवा रहे हैं – हजारों लोग जुड़ चुके हैं, अब आपकी बारी है।
     </div>
 
     <a class="btn" href="https://telegram.me/+w7UYJa_iZfM0NzFl">
-        <img src="https://raw.githubusercontent.com/dillubhai90/Dillu-Bhai-Matka-2/main/IMG_20260330_072855_195.jpg">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png">
         JOIN NOW CHANNEL
     </a>
 
     <div class="footer">
-        👉 अभी क्लिक करें और आज का फ्री Fix Game सबसे पहले पाएं – मौका हाथ से न जाने दें।
+        👉 अभी क्लिक करें और आज का फ्री Fix Game सबसे पहले पाएं।
     </div>
 
     <div class="disclaimer">
-        Disclaimer: This content is for educational purposes only and does not constitute financial advice. Trading involves risk. Please do your own research.
+        Disclaimer: Educational purpose only. Trading involves risk.
     </div>
 
 </div>
